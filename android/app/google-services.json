@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1047665890758",
+    "project_id": "app-consultas-4fb55",
+    "storage_bucket": "app-consultas-4fb55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047665890758:android:17769c05e1daba44160ec7",
+        "android_client_info": {
+          "package_name": "com.example.consulta_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWwyA6Y46nzTBAknBIJLqAPXM9pCu1Sug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
