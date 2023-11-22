@@ -1,3 +1,4 @@
+import 'package:consulta_app/pages/home_page.dart';
 import 'package:consulta_app/pages/login_page.dart';
 import 'package:consulta_app/pages/main_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -33,4 +33,8 @@ class AutenticacaoServico {
   Future<void> deslogar() async {
     return _firebaseAuth.signOut();
   }
+
+  Future<void> excluirConta() async {
+    await _firebaseAuth.currentUser?.delete();
+  }
 }

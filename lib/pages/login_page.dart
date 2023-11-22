@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:consulta_app/services/autenticacao_servico.dart';
 import 'package:consulta_app/utils/meu_snackbar.dart';
 import 'package:flutter/material.dart';
@@ -39,21 +40,46 @@ class _LoginState extends State<Login> {
                       controller: _emailController,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Este campo deve ser preenchido';
+                          return "Este campo deve ser preenchido";
                         }
                         if (value.length < 5) {
-                          return 'O email é muito curto';
+                          AwesomeDialog(
+                            context: context,
+                            dialogType: DialogType.info,
+                            animType: AnimType.bottomSlide,
+                            title: "Erro",
+                            desc: 'O email é muito curto',
+                            btnOkOnPress: () {},
+                          ).show();
+                          return null;
                         }
                         if (!value.contains('@')) {
-                          return 'O e-mail não é valido';
+                          AwesomeDialog(
+                            context: context,
+                            dialogType: DialogType.error,
+                            animType: AnimType.bottomSlide,
+                            title: "Erro",
+                            desc: 'O e-mail não é valido',
+                            btnOkOnPress: () {},
+                          ).show();
+                          return null;
                         }
                         if (!value.contains('.com')) {
-                          return 'O e-mail não é valido';
+                          AwesomeDialog(
+                            context: context,
+                            dialogType: DialogType.error,
+                            animType: AnimType.bottomSlide,
+                            title: "Erro",
+                            desc: 'O e-mail não é valido',
+                            btnOkOnPress: () {},
+                          ).show();
+                          return null;
                         }
                         return null;
                       },
                       decoration: InputDecoration(
-                          labelText: 'E-mail', hintText: 'exemplo@exemplo.com')),
+                          labelText: 'E-mail',
+                          hintText: 'exemplo@exemplo.com')),
                 ),
                 SizedBox(
                   width: 300,
@@ -64,8 +90,17 @@ class _LoginState extends State<Login> {
                         return "Este campo deve ser preenchido";
                       }
                       if (value.length < 5) {
-                        return 'Senha muito curta';
+                         AwesomeDialog(
+                          context: context,
+                          dialogType: DialogType.info,
+                          animType: AnimType.bottomSlide,
+                          title: "Erro",
+                          desc: 'Senha muito curta',
+                          btnOkOnPress: () {},
+                        ).show();
+                        return null;
                       }
+                      
                       return null;
                     },
                     decoration: InputDecoration(
@@ -95,10 +130,26 @@ class _LoginState extends State<Login> {
                           return "Este campo deve ser preenchido";
                         }
                         if (value.length < 5) {
-                          return 'Senha muito curta';
+                          AwesomeDialog(
+                            context: context,
+                            dialogType: DialogType.info,
+                            animType: AnimType.bottomSlide,
+                            title: "Erro",
+                            desc: 'Senha muito curta',
+                            btnOkOnPress: () {},
+                          ).show();
+                          return null;
                         }
                         if (value != _senhaController.text) {
-                          return 'Senha invalida';
+                          AwesomeDialog(
+                            context: context,
+                            dialogType: DialogType.info,
+                            animType: AnimType.bottomSlide,
+                            title: "Erro",
+                            desc: 'Senha invalida',
+                            btnOkOnPress: () {},
+                          ).show();
+                          return null;
                         }
                         return null;
                       },
@@ -146,7 +197,7 @@ class _LoginState extends State<Login> {
 
   botaoPrincipal() {
     String email = _emailController.text;
-    String senha = _emailController.text;
+    String senha = _senhaController.text;
     if (_formKey.currentState!.validate()) {
       if (queroEntrar) {
         print('Entrada validada');
@@ -163,7 +214,10 @@ class _LoginState extends State<Login> {
             if (erro != null) {
               mostrarSnackbar(context: context, texto: erro);
             } else {
-              mostrarSnackbar(context: context, texto: 'Cadastro efetuado com sucesso', isErro: false);
+              mostrarSnackbar(
+                  context: context,
+                  texto: 'Cadastro efetuado com sucesso',
+                  isErro: false);
             }
           },
         );

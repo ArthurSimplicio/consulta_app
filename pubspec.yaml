@@ -38,6 +38,8 @@ dependencies:
   flutter_svg:
   firebase_core:
   firebase_auth:
+  awesome_dialog:
+  google_maps_flutter:
 
 dev_dependencies:
   flutter_test:

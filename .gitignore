@@ -1,4 +1,4 @@
-# Miscellaneous
+m# Miscellaneous
 *.class
 *.log
 *.pyc
@@ -89,7 +89,8 @@ app.*.map.json
 /android/app/release
 
 #Firebase
-android/app/google-services.json
-ios/firebase_app_id_file.json
-ios/Runner/GoogleService-Info.plist
-lib/firebase_options.dart
+
+**android/app/google-services.json
+**ios/firebase_app_id_file.json
+**ios/Runner/GoogleService-Info.plist
+**lib/firebase_options.dart
