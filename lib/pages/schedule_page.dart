@@ -15,13 +15,15 @@ class _SchedulePageState extends State<SchedulePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(82, 180, 197, 1),
       appBar: AppBar(title: Text('Agendamento'),),
       body: 
-          ListView.builder(
+          ListView.separated(
             itemCount: doctors.length,
             itemBuilder: (context, index) {
               final doctor = doctors[index];
               return ListTile(
+                tileColor: Colors.grey.shade300,
                 leading: CircleAvatar(
                   radius: 28,
                   backgroundImage: AssetImage(doctor.foto),
@@ -34,7 +36,9 @@ class _SchedulePageState extends State<SchedulePage> {
                   ));
                 },
               );
+
             },
+            separatorBuilder: (context, index) => const Divider(color: Colors.grey,),
           ),
     );
   }

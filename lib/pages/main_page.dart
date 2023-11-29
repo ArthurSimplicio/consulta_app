@@ -24,6 +24,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(currentIndex: currentIndex, onTap: (index) => setState(() {
         currentIndex = index;
