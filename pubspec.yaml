@@ -41,7 +41,7 @@ dependencies:
   awesome_dialog:
   camera_camera:
   image_picker:
-  table_calendar:
+  table_calendar: ^3.0.9
   intl:
 
 dev_dependencies:
